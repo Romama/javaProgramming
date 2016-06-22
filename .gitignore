@@ -1,0 +1,7 @@
+/bin
+/bin
+
+# 忽略具体文件
+.mymetadata
+
+.settings/
