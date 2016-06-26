@@ -11,7 +11,7 @@ public class Sort {
 
 	public static void main(String[] args){
 		int[] nums = {1,3,54,200,34,2,38,45,2,22,43,4,78,6};//1 2 3 4 6 22 34 38 43 45 54 78 200 
-		
+		int x;
 		//bubbleSort(nums);
 		//insertSort(nums);
 		//simpleSelectSort(nums);
@@ -30,18 +30,18 @@ public class Sort {
 	 */
 	public static void simpleSelectSort(int[] nums){
 		
-		for(int i = 0;i < nums.length;i++){ //趟数
-			int k = i; //暂存当前位置
-			int min = nums[i]; //暂存当前元素
-			//查找剩余元素中的最小值
-			for(int j = i + 1; j < nums.length;j++){
+		for(int i = 0;i < nums.length; i++){ //趟数
+			int k = i; //初始化最小值下标
+			int min = nums[i]; //初始化最小值
+			//查找最小值
+			for(int j = i + 1; j < nums.length; j++){
 				if(nums[j] < min){
 					min = nums[j];
 				    k = j;
 				}
 			}
 			
-			//交换元素，根据元素下标来交换元素
+			//若最小值与初始化的不同，则交换元素
 			if(i != k){
 				nums[k] = nums[i];
 				nums[i] = min;
@@ -59,13 +59,12 @@ public class Sort {
 		if(nums == null) return;
 		int len = nums.length;
 		int tmp;
-		int j; //插入位置
+		int j;
 		for(int i = 1 ;i < len; i++){ // n-1趟
 			tmp = nums[i];//暂存
-			for(j = 0; j < i && nums[i] >= nums[j] ; j++); //nums[i] > nums[j]时结束，查找插入位置，j为插入位置
-			for(int k = i;k >= j + 1;k--) //移位
-				nums[k] = nums[k - 1];
-			nums[j] = tmp; //插入值
+			for(j = i - 1; j >= 0 && nums[j] > tmp; j--)//向后移动元素
+			    nums[j + 1] = nums[j];
+			nums[j + 1] = tmp; //插入值
 		}
 	}
 	

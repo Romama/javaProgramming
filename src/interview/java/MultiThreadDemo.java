@@ -23,6 +23,11 @@ public class MultiThreadDemo {
 			t.start();
 		}
 		
+		Inner inner = new MultiThreadDemo.Inner(); //定义一个静态内部类的实例对象
+	}
+	
+	public static class Inner{
+		
 	}
 	
 	private synchronized void inc(){ //同步方法

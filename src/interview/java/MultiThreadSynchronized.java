@@ -29,8 +29,8 @@ public class MultiThreadSynchronized {
 				System.out.println("thread 1 is waiting");
 				
 				try{
-					MultiThreadSynchronized.class.wait();
-					Thread.sleep(100);
+					MultiThreadSynchronized.class.wait(); //同步锁.wait()
+					Thread.sleep(100); //sleep(100)是一个静态方法,Thread.sleep(100)
 				} catch(InterruptedException e) {
 					e.printStackTrace(); //输入异常
 				}
