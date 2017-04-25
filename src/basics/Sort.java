@@ -1,6 +1,5 @@
 package basics;
 
-
 //import basic.BinarySearch;
 /**
  * 数组的排序：选择排序、插入排序
@@ -11,6 +10,7 @@ public class Sort {
 
 	public static void main(String[] args){
 		int[] nums = {1,3,54,200,34,2,38,45,2,22,43,4,78,6};//1 2 3 4 6 22 34 38 43 45 54 78 200 
+		
 		int x;
 		//bubbleSort(nums);
 		//insertSort(nums);

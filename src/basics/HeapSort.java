@@ -39,9 +39,9 @@ public class HeapSort {
 	 */
     public static void heapSort(int[] data) {  
         for (int i = 0; i < data.length; i++) {  
-            //createMaxHeap(data, data.length - 1 - i);  
-        	createMinHeap(data, data.length - 1 - i); //调整堆
-            swap(data, 0, data.length - 1 - i); // 输出最大值
+            createMaxHeap(data, data.length - 1 - i);  
+        	//createMinHeap(data, data.length - 1 - i); //调整堆
+            swap(data, 0, data.length - 1 - i); // 将堆顶元素与当前堆中最后一个元素交换，继续调整堆
             print(data);  
         }  
     }  
@@ -66,10 +66,11 @@ public class HeapSort {
                         biggerIndex++;  
                     }  
                 }  
+                //由于要建立的是大根堆，所以当根节点的值小于两个孩子节点中的最大值时，交换
                 if (data[k] < data[biggerIndex]) {  
                     // 若当前节点值比子节点最大值小，则交换2者的值，交换后将biggerIndex值赋值给k  
                     swap(data, k, biggerIndex);  
-                    k = biggerIndex;  //下一步需要调整以该结点为根的子树
+                    k = biggerIndex;  //下一步需要调整以该结点为根的子树，递归调整堆
                 } else {  
                     break;  
                 }  
