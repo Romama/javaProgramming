@@ -15,8 +15,8 @@ public class Sort {
 		//bubbleSort(nums);
 		//insertSort(nums);
 		//simpleSelectSort(nums);
-		//quickSort(nums, 0, nums.length - 1);
-		insertSort(nums);
+	    quickSort(nums, 0, nums.length - 1);
+		//insertSort(nums);
 		for (int i = 0; i < nums.length; i++) {
 			System.out.print(nums[i] + " ");
 		}
