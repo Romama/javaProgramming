@@ -59,8 +59,9 @@ public class RemoveDuplicated {
 			}
 			int i = 0,j = 1;
 			while(j < list.size()){
-				if(list.get(i).equals(list.get(j)))
+				if(list.get(i).equals(list.get(j))) {
 					list.remove(j);
+				}
 				else{
 					i = j;
 					++j;
