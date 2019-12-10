@@ -28,8 +28,9 @@ public class PrintToMaxOfNDigits {
 		List<String> list = new ArrayList<String>();
 		char[] number = new char[n]; //存储一个n位数
 		//n位数的每一位都初始为0
-		for(int i = 0; i < n; ++i)
+		for(int i = 0; i < n; ++i) {
 			number[i] = '0';
+		}
 		while(!increment(number)){
 			print(list, number);
 		}
@@ -49,11 +50,13 @@ public class PrintToMaxOfNDigits {
 		//
 		for(int i = len - 1; i >= 0; --i){
 			int nSum = number[i] - '0' + nTakeOver; //本位值
-			if(i == len - 1) //若为最后一位，则加1
+			if(i == len - 1) { //若为最后一位，则加1
 				nSum++;
+			}
 			if(nSum >= 10){
-				if(i == 0)
+				if(i == 0) {
 					isOverflow = true;
+				}
 				else {
 					nSum = nSum - 10;
 					nTakeOver = 1;
@@ -74,12 +77,10 @@ public class PrintToMaxOfNDigits {
 	public static void print(List<String> list,char[] number){
 		int i = 0;
 		int len = number.length;
-		for(i = 0; i < len && number[i] == '0'; ++i);
+		for(i = 0; i < len && number[i] == '0'; ++i){};
 		StringBuilder sb = new StringBuilder(String.valueOf(number));
-		
 		sb = sb.replace(0, i, " "); //0 到 i - 1之间的数替换为空
+		System.out.println(sb.toString());
 		list.add(sb.toString());
-		
 	}
-
 }
