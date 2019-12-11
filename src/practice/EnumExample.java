@@ -3,6 +3,7 @@ package practice;
 /**
  * @author: WeiCuicui
  * @data: 2019/11/25
+ * 枚举定义及使用
  */
 public enum EnumExample {
     AAA(1, "NICE"),

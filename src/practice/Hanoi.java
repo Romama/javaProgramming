@@ -3,6 +3,7 @@ package practice;
 /**
  * @author: WeiCuicui
  * @data: 2019/7/18
+ * 汉诺塔
  */
 public class Hanoi {
 
