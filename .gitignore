@@ -1,7 +1,7 @@
+# 忽略当前目录下的bin
 /bin
-/bin
-
 # 忽略具体文件
 .mymetadata
-
+# 忽略目录下的所有文件
+.idea/
 .settings/
